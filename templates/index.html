@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator API Documentation</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator API Documentation</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Calculator API</h1>
-        <p class="description">A simple and powerful REST API for basic mathematical operations</p>
+<div class="container">
+    <h1>Calculator API</h1>
+    <p class="description">A simple and powerful REST API for basic mathematical operations</p>
+    
+    <div class="endpoint-card">
+        <h2 class="endpoint-title">Base Endpoint</h2>
+        <div class="code-block">GET /{operation}/{number1}/{number2}</div>
+    </div>
 
-        <div class="endpoint-card">
-            <h2 class="endpoint-title">Base Endpoint</h2>
-            <div class="code-block">GET /{operation}/{number1}/{number2}</div>
+    <div class="operations-grid">
+        <div class="operation-card">
+            <div class="operation-name">Addition</div>
+            <p>Adds two numbers</p>
+            <input type="number" id="add1" placeholder="First number">
+            <input type="number" id="add2" placeholder="Second number">
+            <a href="#" class="try-it" onclick="window.location.href='/add/' + document.getElementById('add1').value + '/' + document.getElementById('add2').value">Try Addition</a>
         </div>
 
-        <div class="operations-grid">
-            <div class="operation-card">
-                <div class="operation-name">Addition</div>
-                <p>Adds two numbers</p>
-                <a href="/add/5/3" class="try-it">Try /add/5/3</a>
-            </div>
-            <div class="operation-card">
-                <div class="operation-name">Subtraction</div>
-                <p>Subtracts two numbers</p>
-                <a href="/subtract/10/4" class="try-it">Try /subtract/10/4</a>
-            </div>
-            <div class="operation-card">
-                <div class="operation-name">Multiplication</div>
-                <p>Multiplies two numbers</p>
-                <a href="/multiply/6/7" class="try-it">Try /multiply/6/7</a>
-            </div>
-            <div class="operation-card">
-                <div class="operation-name">Division</div>
-                <p>Divides two numbers</p>
-                <a href="/divide/15/3" class="try-it">Try /divide/15/3</a>
-            </div>
+        <div class="operation-card">
+            <div class="operation-name">Subtraction</div>
+            <p>Subtracts two numbers</p>
+            <input type="number" id="sub1" placeholder="First number">
+            <input type="number" id="sub2" placeholder="Second number">
+            <a href="#" class="try-it" onclick="window.location.href='/subtract/' + document.getElementById('sub1').value + '/' + document.getElementById('sub2').value">Try Subtraction</a>
         </div>
 
-        <div class="endpoint-card">
-            <h2 class="endpoint-title">Response Format</h2>
-            <div class="code-block">
+        <div class="operation-card">
+            <div class="operation-name">Multiplication</div>
+            <p>Multiplies two numbers</p>
+            <input type="number" id="mul1" placeholder="First number">
+            <input type="number" id="mul2" placeholder="Second number">
+            <a href="#" class="try-it" onclick="window.location.href='/multiply/' + document.getElementById('mul1').value + '/' + document.getElementById('mul2').value">Try Multiplication</a>
+        </div>
+
+        <div class="operation-card">
+            <div class="operation-name">Division</div>
+            <p>Divides two numbers</p>
+            <input type="number" id="div1" placeholder="First number">
+            <input type="number" id="div2" placeholder="Second number">
+            <a href="#" class="try-it" onclick="window.location.href='/divide/' + document.getElementById('div1').value + '/' + document.getElementById('div2').value">Try Division</a>
+        </div>
+    </div>
+
+    <div class="endpoint-card">
+        <h2 class="endpoint-title">Response Format</h2>
+        <div class="code-block">
 {
     "status": 200,
     "result": 8
 }</div>
-        </div>
-
-        <div class="note">
-            <strong>Note:</strong> All operations return JSON responses. Error responses will include appropriate status codes and error messages.
-        </div>
     </div>
+
+    <div class="note">
+        <strong>Note:</strong> All operations return JSON responses. Error responses will include appropriate status codes and error messages.
+    </div>
+</div>
 </body>
 </html>
